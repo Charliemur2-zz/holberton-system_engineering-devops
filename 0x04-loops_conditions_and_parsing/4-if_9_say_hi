@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# script that displays Holberton School 10 times with while and hi after 9 line
+i=1
+while [ $i -le 10 ]
+do
+    if [ $i -eq 10 ]
+    then
+        echo "Hi"
+        echo "Holberton School"
+        i=$(( i + 1 ))
+    else
+    echo "Holberton School"
+    i=$(( i + 1 ))
+    fi
+done
