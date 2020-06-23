@@ -1,10 +1,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <sys/types.h>
 
 /**
  * infinite_while - function for parent proccess get sleep
- *
+ * Return: (0)
  */
 
 int infinite_while(void)
@@ -18,12 +19,12 @@ int infinite_while(void)
 
 /**
  * main - Program that creates 5 zombie process.
- *
+ * Return: 0
  */
 
 int main(void)
 {
-	int count; 
+	int count;
 	pid_t child_pid;
 
 	for (count = 0; count < 5; count++)
