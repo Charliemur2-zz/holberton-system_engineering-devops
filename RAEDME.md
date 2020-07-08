@@ -1,1 +1,0 @@
-create executable scripts with linux comands
