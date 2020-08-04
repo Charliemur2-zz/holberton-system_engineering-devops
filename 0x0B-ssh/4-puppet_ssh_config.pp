@@ -5,5 +5,5 @@ file_line {'disable password login':
 }
 file_line {'pad to add the private key':
     path => 'etc/ssh/ssh_config',
-    line => 'IdentityFile ~/.ssh/holberton'
+    line => 'IdentityFile ~/.ssh/holberton',
 }
