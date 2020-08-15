@@ -6,7 +6,7 @@ package { 'nginx':
     ensure => 'installed',
 }
 file_line{ 'config nginx':
-    path => '/etc/nginx/nginx.conf',
+    path  => '/etc/nginx/nginx.conf',
     line  => "http {\n\tadd_header X-Served-By ${hostname};",
     match => 'http {',
 
