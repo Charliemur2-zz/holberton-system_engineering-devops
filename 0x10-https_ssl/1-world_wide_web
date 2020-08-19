@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2116
 # function that returns the information of the subdomains
 
 get_info_subdomains() {
     # show the information about the subdomains
-    SUBDOMAINS=("www" "web-01" "web-02" "lb-01") 
+    SUBDOMAINS=("www" "lb-01" "web-01" "web-02") 
     if [ -z "$2" ];
     then
         for i in "${SUBDOMAINS[@]}";
