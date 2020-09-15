@@ -16,10 +16,10 @@ if __name__ == "__main__":
     tasks_r = requests.get(task_url).json()
     tasks = len(tasks_r)
     for task in tasks_r:
-        if (task.get('completed') == True):
+        if (task.get('completed') is True):
             task_comp += 1
             titles.append(task.get('title'))
     print('Employee {} is done with tasks ({}/{}):'
-          .format(user_name,task_comp, tasks))
+          .format(user_name, task_comp, tasks))
     for title in titles:
         print('\t{}'.format(title))
