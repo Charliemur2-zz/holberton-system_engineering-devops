@@ -23,7 +23,7 @@ if __name__ == "__main__":
         if (task.get('completed') is True):
             task_comp += 1
             titles.append(task.get('title'))
-    print('Employee {} is done with tasks ({}/{}):'
+    print('Employee {} is done with tasks({}/{}):'
           .format(user_name, task_comp, tasks))
     for title in titles:
         print('\t {}'.format(title))
