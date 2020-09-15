@@ -26,4 +26,4 @@ if __name__ == "__main__":
     print('Employee {} is done with tasks ({}/{}):'
           .format(user_name, task_comp, tasks))
     for title in titles:
-        print('\t{}'.format(title))
+        print('\t {}'.format(title))
