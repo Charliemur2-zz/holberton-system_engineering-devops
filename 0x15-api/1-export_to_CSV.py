@@ -21,4 +21,5 @@ if __name__ == "__main__":
         for task in tasks_r:
             task_status = task.get('completed')
             title = task.get('title')
-            file.write('"{}","{}","{}","{}"\n'.format(id, user_name, task_status, title))
+            file.write('"{}","{}","{}","{}"\n'
+                       .format(id, user_name, task_status, title))
