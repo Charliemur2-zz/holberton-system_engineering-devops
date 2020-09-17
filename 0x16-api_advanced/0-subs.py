@@ -7,11 +7,10 @@ subreddit. If an invalid subreddit is given, the function should return 0.
 
 
 import requests
-import json
 
 
 def number_of_subscribers(subreddit):
-    url = 'https://www.reddit.com/r/' + subreddit + '/about.json'
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     req = requests.get(url, headers={'User-agent': 'Carlos'},
                        allow_redirects=False)
     if req.json().get('data'):
