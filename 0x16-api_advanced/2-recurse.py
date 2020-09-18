@@ -11,13 +11,18 @@ found for the given subreddit, the function should return None.
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+def recurse(subreddit, hot_list=[], after=''):
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
+                                                                subreddit, 
+                                                                after)
     req = requests.get(url, headers={'User-agent': 'Carlos'},
                        allow_redirects=False)
-    if req.json().get('data'):
+    if req.status_code == 200:
+        after = req.json().get('data').get('after')
         for posts in req.json().get('data').get('children'):
             hot_list.append(posts.get('data').get('title'))
-        return hot_list
+        if after is None:
+            return hot_list
+        return recurse(subreddit, hot_list, after)
     else:
-        return ('None')
+        return None
