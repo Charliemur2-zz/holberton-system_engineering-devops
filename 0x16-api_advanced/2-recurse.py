@@ -12,9 +12,8 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=''):
-    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
-                                                                subreddit, 
-                                                                after)
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(subreddit,
+                                                                 after)
     req = requests.get(url, headers={'User-agent': 'Carlos'},
                        allow_redirects=False)
     if req.status_code == 200:
